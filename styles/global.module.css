@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 32px;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Semakin transparan untuk efek kaca */
+    backdrop-filter: blur(16px); /* Blur lebih kuat untuk efek frosted glass */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Border tipis mengkilap di semua sisi */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Bayangan lebih lembut */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 32px;
+}
+
+.brand-left h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.brand-left h1 span {
+    color: #f97316;
+}
+
+.navigasi-right ul {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+}
+
+.navigasi-right a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 14px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+.navigasi-right a::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 2px;
+    background: #f97316;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navigasi-right a:hover,
+.navigasi-right a.active {
+    color: #ffffff;
+}
+
+.navigasi-right a:hover::after,
+.navigasi-right a.active::after {
+    transform: scaleX(1);
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.menu-toggle span {
+    width: 26px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navigasi-right {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    .navigasi-right.open {
+        max-height: 400px;
+    }
+
+    .navigasi-right ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 16px 16px;
+    }
+
+    .navigasi-right a {
+        display: block;
+        padding: 14px 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .navigasi-right a::after {
+        display: none;
+    }
+}

@@ -1,0 +1,39 @@
+{
+  "projects": [
+    {
+      "number": 1,
+      "title": "todo list",
+      "description": "A simple todo list application with only HTML, CSS, and JavaScript. a task from RevoU CodingCamp assignment",
+      "image": "../images/todo-list.png",
+      "url": "https://dfnero.github.io/-CodingCamp-150925-abbyansyah-atha/"
+    },
+    {
+      "number": 2,
+      "title": "todo list",
+      "description": "A simple todo list application with only HTML, CSS, and JavaScript. a task from RevoU CodingCamp assignment",
+      "image": "../images/todo-list.png",
+      "url": "https://dfnero.github.io/-CodingCamp-150925-abbyansyah-atha/"
+    }
+  ],
+  "skills": ["web development", "game development", "3D modelling (blender)"],
+  "tech-stack": {
+    "languages": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "PHP",
+      "Rust",
+      "dart",
+      "Java"
+    ],
+    "database": ["MySQL", "PostgreSQL", "Supabase"],
+    "frameworks/libraries": [
+      "React.js",
+      "laravel",
+      "nuxt.js",
+      "next.js",
+      "flutter(mobile only)"
+    ]
+  }
+}
